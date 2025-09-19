@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kana Sans Font Family */
+@font-face {
+  font-family: 'Kana Sans';
+  src: url('/fonts/Kana Sans Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kana Sans';
+  src: url('/fonts/Kana Sans Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kana Sans';
+  src: url('/fonts/Kana Sans Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kana Sans';
+  src: url('/fonts/Kana Sans Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kana Sans';
+  src: url('/fonts/Kana Sans Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kana Sans';
+  src: url('/fonts/Kana Sans Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kana Sans';
+  src: url('/fonts/Kana Sans Bold Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Helvetica Font Family */
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/helvetica-light-587ebe5a59211.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('/fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 330 81% 60%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 330 81% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent;
+  }
+  
+  .gradient-bg {
+    @apply bg-gradient-to-br from-pink-50 to-purple-50;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .collapsible-content {
+    @apply overflow-hidden transition-all duration-300 ease-in-out;
+  }
+  
+  .collapsible-content.open {
+    @apply max-h-screen opacity-100;
+  }
+  
+  .collapsible-content.closed {
+    @apply max-h-0 opacity-0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Kana Title Scaling - Radical Face Style */
+  .kana-title-scale {
+    transform-origin: left center;
+    will-change: transform;
+  }
+
+  /* Scale down extremely on mobile and split screen */
+  @media screen and (max-width: 900px) {
+    .kana-title-scale {
+      transform: scale(0.3) !important;
+    }
+  }
+
+  /* Scale down on tablets */
+  @media screen and (min-width: 901px) and (max-width: 1200px) {
+    .kana-title-scale {
+      transform: scale(0.6) !important;
+    }
+  }
+
+  /* Scale down slightly on medium screens */
+  @media screen and (min-width: 1201px) and (max-width: 1600px) {
+    .kana-title-scale {
+      transform: scale(0.8) !important;
+    }
+  }
+
+  /* Full scale on large screens */
+  @media screen and (min-width: 1601px) {
+    .kana-title-scale {
+      transform: scale(1) !important;
+    }
+  }
+
+  /* Container max-widths for better mobile experience */
+  .container-responsive {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-responsive {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-responsive {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Prevent horizontal overflow */
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+
+  /* Flexible spacing utilities */
+  .space-y-responsive > * + * {
+    margin-top: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .space-y-responsive > * + * {
+      margin-top: 1.5rem;
+    }
+  }
+
+  /* Touch targets for better mobile interaction */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Safe area handling for mobile devices */
+  .safe-area-padding {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+
+  /* Prevent Ge'ez text from wrapping */
+  .geez-text {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
