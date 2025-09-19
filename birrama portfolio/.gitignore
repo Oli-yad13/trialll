@@ -1,0 +1,68 @@
+# Parent level directories to ignore
+../Mavuno/
+../mavuno-clean/
+../Birrama/
+../FarmFresh/
+../FarmFreshNew/
+../Home/
+../MediFront-main/
+../MyFirstRepo/
+../birrama-portfolio-clean/
+../bridge/
+../c++/
+../call center/
+../complete-rentiva/
+../dik dik/
+../ff/
+../front/
+../geo-main/
+../hackathon cur/
+../job filtering ai portal/
+../job portal/
+../kana project/
+../lanchi app/
+../lanchi-landing/
+../lanchi-main/
+../land/
+../last/
+../learning-go/
+../library-management-system*/
+../mcex/
+../nbproject/
+../new-idnet/
+../no/
+../node_modules/
+../novus-academy-ai*/
+../oop-project*/
+../oop/
+../out/
+../package-lock.json
+../package.json
+../portofolio/
+../profile/
+../project-bolt*/
+../react folder*/
+../se- project/
+../start/
+../system_engineering-devops/
+../tatus
+../tehut/
+../tele*/
+../telemedhin*/
+../test.py
+../threefile/
+../tl/
+../to-do in go/
+../*.pdf
+../*.mp4
+../*.zip
+../.idea/
+
+# Local ignores
+node_modules/
+.next/
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db
